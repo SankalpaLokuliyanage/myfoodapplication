@@ -35,7 +35,7 @@ Future<String?> _googleSignUp() async {
 
     User? user = FirebaseAuth.instance.currentUser;
 
-    print(user!.email);
+    print(user!.displayName);
 
 	} catch(e) {
     
