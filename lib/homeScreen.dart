@@ -33,14 +33,12 @@ class HomeScreen extends StatelessWidget {
           image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage('assets/foodall.jpg')),
-          
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(children: [
           Expanded(
             flex: 2,
             child: Container(
-            
             child: Column(
               children: [
                 Padding(
@@ -83,10 +81,46 @@ class HomeScreen extends StatelessWidget {
                   ),),),
               ],
             ),
-          ),),
-          Expanded(child: Container())
+          ),
+          ),
+          Expanded(child: Container(),),
         ],),
       ),
+      Padding(padding: const EdgeInsets.symmetric(vertical: 5),
+      child: Row(children: [
+        Text("Popular", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 22),)
+      ],),),
+
+      Row(children: [
+        Container(
+          height: 230,
+          width: 160,
+          decoration: BoxDecoration(
+            color: Color(0xffd9dad9),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            Expanded(
+              flex: 2,
+              child: Image.asset('assets/cheeseburger.png')),
+            Expanded(
+              child: Padding(padding: const EdgeInsets.all(8.0),
+              child: Column(children: [
+              Text('Cheese Burger', style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold
+              ),),
+              Text('Rs. 500/=', style: TextStyle(
+                color: Colors.grey,
+              ),),
+            ],),),
+            ),
+          ],),
+        ),
+      ],),
+
     ],),),
     );
   }
