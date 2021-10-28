@@ -107,7 +107,9 @@ class HomeScreen extends StatelessWidget {
               child: Image.asset('assets/cheeseburger.png')),
             Expanded(
               child: Padding(padding: const EdgeInsets.all(8.0),
-              child: Column(children: [
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
               Text('Cheese Burger', style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold
@@ -115,6 +117,34 @@ class HomeScreen extends StatelessWidget {
               Text('Rs. 500/=', style: TextStyle(
                 color: Colors.grey,
               ),),
+              Row(children: [
+                Expanded(child: Container(
+                height: 30,
+                width: 80,
+                child: OutlineButton(
+                  child: Row(children: [
+                    Text('1'),
+                    Icon(
+                      Icons.arrow_drop_down
+                    )
+                  ],),
+                  onPressed: () {}),
+              ),),
+              Expanded(
+                child: Container(
+                  height: 30,
+                  width: 80,
+                  child: OutlineButton(
+                    child: Row(children: [
+                      Text('1'),
+                      Icon(
+                        Icons.arrow_drop_down
+                      )
+                    ],),
+                    onPressed: () {}),
+                ),
+              ),
+              ],)
             ],),),
             ),
           ],),
