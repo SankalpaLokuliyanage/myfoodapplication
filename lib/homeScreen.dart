@@ -78,7 +78,20 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(children: [
+          DrawerHeader(child: Row(children: [
+            CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 43,
+              child: CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.green,
+              ),
+            )
+          ],)),
+        ],),
+      ),
       appBar: AppBar(
         title: Text('Home'),
         actions: [
