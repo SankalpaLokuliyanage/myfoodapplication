@@ -79,18 +79,37 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        child: ListView(children: [
+        child: Container(
+          color: Colors.green,
+          child: ListView(children: [
           DrawerHeader(child: Row(children: [
             CircleAvatar(
               backgroundColor: Colors.white,
               radius: 43,
               child: CircleAvatar(
                 radius: 40,
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.red,
               ),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Welcome Guest'),
+                SizedBox(height: 7,),
+                Container(
+                  height: 30,
+                  child: OutlinedButton(
+                  onPressed: () {},
+                  child: Text('Login', style: TextStyle(fontSize: 20, color: Colors.black),),
+                  ),
+                  ),
+              ],),
           ],)),
         ],),
+        ),
       ),
       appBar: AppBar(
         title: Text('Home'),
