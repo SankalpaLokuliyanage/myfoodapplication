@@ -75,6 +75,9 @@ class HomeScreen extends StatelessWidget {
         );
   }
   
+ 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,7 +110,48 @@ class HomeScreen extends StatelessWidget {
                   ),
                   ),
               ],),
-          ],)),
+          ],),
+          ),
+          ListTile(
+            leading: Icon(
+            Icons.home_outlined, size: 32,),
+            title: Text("Home", style: TextStyle(color: Colors.black),),
+          ),
+          ListTile(
+            leading: Icon(
+            Icons.shop_outlined, size: 32,),
+            title: Text("Review Cart", style: TextStyle(color: Colors.black),),
+          ),
+          ListTile(
+            leading: Icon(
+            Icons.person_outlined, size: 32,),
+            title: Text("My Profile", style: TextStyle(color: Colors.black),),
+          ),
+          ListTile(
+            leading: Icon(
+            Icons.notifications_outlined, size: 32,),
+            title: Text("Notification", style: TextStyle(color: Colors.black),),
+          ),
+          ListTile(
+            leading: Icon(
+            Icons.star_outline, size: 32,),
+            title: Text("Rating & Review", style: TextStyle(color: Colors.black),),
+          ),
+          ListTile(
+            leading: Icon(
+            Icons.favorite_border_outlined, size: 32,),
+            title: Text("Wishlist", style: TextStyle(color: Colors.black),),
+          ),
+          ListTile(
+            leading: Icon(
+            Icons.copy_outlined,size: 32,),
+            title: Text("Raise and Complaint", style: TextStyle(color: Colors.black),),
+          ),
+          ListTile(
+            leading: Icon(
+            Icons.format_quote_outlined, size: 32,),
+            title: Text("FAQs", style: TextStyle(color: Colors.black),),
+          ),
         ],),
         ),
       ),
