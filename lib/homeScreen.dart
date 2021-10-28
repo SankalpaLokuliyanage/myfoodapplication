@@ -1,6 +1,79 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+
+  Widget singleProducts(){
+    return Container(
+          margin: EdgeInsets.symmetric(horizontal: 10),
+          height: 230,
+          width: 160,
+          decoration: BoxDecoration(
+            color: Color(0xffd9dad9),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            Expanded(
+              flex: 2,
+              child: Image.asset('assets/cheeseburger.png')),
+            Expanded(
+              child: Padding(padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+              Text('Cheese Burger', style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold
+              ),),
+              Text('Rs. 500/=', style: TextStyle(
+                color: Colors.grey,
+              ),),
+              Row(children: [
+                Expanded(child: Container(
+                  height: 30,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(children: [
+                    Expanded(child: Container(
+                      height: 30,
+                      width: 60,
+                      child: OutlineButton(
+                        child: Row(children: [
+                          Text('M'),
+                          Icon(
+                            Icons.arrow_drop_down,
+                          )
+                        ],),
+                        onPressed: () {}),
+                    ),),
+                  ],),
+                ),),
+                SizedBox(width: 1,),
+                Expanded(child: Container(
+                  height: 30,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.green),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                    Icon(Icons.remove, size: 15),
+                    Text('1'),
+                    Icon(Icons.add, size: 15,),
+                  ],),
+                ),),
+              ],)
+            ],),),
+            ),
+          ],),
+        );
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -26,7 +99,7 @@ class HomeScreen extends StatelessWidget {
 
     body: Padding(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      child: Column(children: [
+      child: ListView(children: [
       Container(
         height: 150,
         decoration: BoxDecoration(
@@ -86,70 +159,43 @@ class HomeScreen extends StatelessWidget {
           Expanded(child: Container(),),
         ],),
       ),
+
+      SizedBox(height: 15,),
       Padding(padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(children: [
         Text("Popular", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 22),)
       ],),),
 
-      Row(children: [
-        Container(
-          height: 230,
-          width: 160,
-          decoration: BoxDecoration(
-            color: Color(0xffd9dad9),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-            Expanded(
-              flex: 2,
-              child: Image.asset('assets/cheeseburger.png')),
-            Expanded(
-              child: Padding(padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-              Text('Cheese Burger', style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold
-              ),),
-              Text('Rs. 500/=', style: TextStyle(
-                color: Colors.grey,
-              ),),
-              Row(children: [
-                Expanded(child: Container(
-                height: 30,
-                width: 80,
-                child: OutlineButton(
-                  child: Row(children: [
-                    Text('1'),
-                    Icon(
-                      Icons.arrow_drop_down
-                    )
-                  ],),
-                  onPressed: () {}),
-              ),),
-              Expanded(
-                child: Container(
-                  height: 30,
-                  width: 80,
-                  child: OutlineButton(
-                    child: Row(children: [
-                      Text('1'),
-                      Icon(
-                        Icons.arrow_drop_down
-                      )
-                    ],),
-                    onPressed: () {}),
-                ),
-              ),
-              ],)
-            ],),),
-            ),
-          ],),
-        ),
+     SingleChildScrollView(
+       scrollDirection: Axis.horizontal,
+       child:  Row(children: [
+        singleProducts(),
+        singleProducts(),
+        singleProducts(),
+        singleProducts(),
+        singleProducts(),
       ],),
+     ),
+
+    SizedBox(height: 15,),
+     Padding(padding: const EdgeInsets.symmetric(vertical: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+        Text("Explore", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 22),)
+      ],),),
+
+    SingleChildScrollView(
+       scrollDirection: Axis.horizontal,
+       child:  Row(children: [
+        singleProducts(),
+        singleProducts(),
+        singleProducts(),
+        singleProducts(),
+        singleProducts(),
+      ],),
+     ),
+
 
     ],),),
     );
