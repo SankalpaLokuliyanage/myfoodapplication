@@ -95,7 +95,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              width: 20,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -152,6 +152,39 @@ class HomeScreen extends StatelessWidget {
             Icons.format_quote_outlined, size: 32,),
             title: Text("FAQs", style: TextStyle(color: Colors.black),),
           ),
+
+          SizedBox(height: 30,),
+            Container(
+            height: 350,
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Contact Support", style: TextStyle(fontSize: 20),),
+                SizedBox(height: 10,),
+
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  
+                  child: Container(child: Column(
+                    children: [Row(
+                    children: [Text("Call Us: "),
+                    SizedBox(width: 10,),
+                    Text("+94772764***")],
+                    ),
+                    Row(
+                    children: [Text("Email: "),
+                    SizedBox(width: 10,),
+                    Text("sankalpa.lokuliyanage@outlook.com")],
+                ),],),)
+                  
+                )
+
+                
+              ],
+            ),
+          ),
+
         ],),
         ),
       ),
